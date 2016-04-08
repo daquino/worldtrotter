@@ -1,6 +1,6 @@
 import UIKit
 
-class ConversionViewController: UIViewController {
+class ConversionViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var celiusLabel: UILabel!
     @IBOutlet var textField: UITextField!
@@ -45,6 +45,13 @@ class ConversionViewController: UIViewController {
         else {
             celiusLabel.text = "???"
         }
+    }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        let existingTextHasDecimalSeparator = textField.text?.rangeOfString(".")
+        let replacementTextHasDecimalSeparator = string.rangeOfString(".")
+        let replacementTextHasLetters = string.rangeOfCharacterFromSet(NSCharacterSet.letterCharacterSet())
+        return (existingTextHasDecimalSeparator == nil || replacementTextHasDecimalSeparator == nil) && replacementTextHasLetters == nil;
     }
     
 }
