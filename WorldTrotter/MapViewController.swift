@@ -15,7 +15,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         mapView = MKMapView()
         view = mapView;
         
-        let segmentedControl = UISegmentedControl(items: ["Standard", "Hybrid", "Satellite"])
+        let standardString = NSLocalizedString("Standard", comment: "Standard map view")
+        let satelliteString = NSLocalizedString("Satellite", comment: "Satellite map view")
+        let hybridString = NSLocalizedString("Hybrid", comment: "Hybrid map view")
+        
+        let segmentedControl = UISegmentedControl(items: [standardString, hybridString, satelliteString])
         segmentedControl.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.5)
         segmentedControl.selectedSegmentIndex = 0
         
@@ -30,7 +34,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         
         NSLayoutConstraint.activateConstraints([topConstraint, leadingConstraint, trailingConstraint])
         
-        segmentedControl.addTarget(self, action: "mapTypeChanged:", forControlEvents: .ValueChanged)
+        segmentedControl.addTarget(self, action: #selector(mapTypeChanged(_:)), forControlEvents: .ValueChanged)
         
         let currentLocationButton = UIButton(type: .System)
         currentLocationButton.setTitle("Find me", forState: .Normal)
@@ -43,7 +47,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         
         NSLayoutConstraint.activateConstraints([buttonBottomConstraint, buttonLeadingConstraint])
         
-        currentLocationButton.addTarget(self, action: "findMe:", forControlEvents: .TouchUpInside)
+        currentLocationButton.addTarget(self, action: #selector(findMe(_:)), forControlEvents: .TouchUpInside)
         
         let poiButton = UIButton(type: .System)
         poiButton.setTitle("POI", forState: .Normal)
@@ -56,7 +60,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         
         NSLayoutConstraint.activateConstraints([poiButtonBottomConstraint, poiButtonTrailingConstraint])
         
-        poiButton.addTarget(self, action: "togglePoi:", forControlEvents: .TouchUpInside)
+        poiButton.addTarget(self, action: #selector(togglePoi(_:)), forControlEvents: .TouchUpInside)
         
         
     }
@@ -122,7 +126,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         }
         mapView.addAnnotation(toggledLocation)
         currentAnnotation = toggledLocation
-        currentIndex++
+        currentIndex += 1
         if(currentIndex >= poi.count) {
             currentIndex = 0
         }

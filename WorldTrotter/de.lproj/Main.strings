@@ -1,0 +1,24 @@
+
+/* Class = "UILabel"; text = "degrees Fahrenheit"; ObjectID = "0R5-rC-qsh"; */
+"0R5-rC-qsh.text" = "grad Fahrenheit";
+
+/* Class = "UILabel"; text = "degrees Celsius"; ObjectID = "13o-js-R9I"; */
+"13o-js-R9I.text" = "grad Celsius";
+
+/* Class = "UILabel"; text = "100"; ObjectID = "5Y3-d5-71U"; */
+"5Y3-d5-71U.text" = "100";
+
+/* Class = "UITabBarItem"; title = "Convert"; ObjectID = "KDh-QI-7hS"; */
+"KDh-QI-7hS.title" = "Konvertieren";
+
+/* Class = "UITextField"; placeholder = "value"; ObjectID = "gNB-xT-R5u"; */
+"gNB-xT-R5u.placeholder" = "wert";
+
+/* Class = "UITabBarItem"; title = "Map"; ObjectID = "ubb-N9-Vw8"; */
+"ubb-N9-Vw8.title" = "Karte";
+
+/* Class = "UILabel"; text = "is really"; ObjectID = "xzk-Aa-L6R"; */
+"xzk-Aa-L6R.text" = "ist wirklich";
+
+/* Class = "UITabBarItem"; title = "Big Nerd Ranch"; ObjectID = "ywL-cg-tJx"; */
+"ywL-cg-tJx.title" = "Big Nerd Ranch";
